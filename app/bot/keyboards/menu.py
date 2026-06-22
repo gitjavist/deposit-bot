@@ -41,7 +41,7 @@ main_keyboard = ReplyKeyboardMarkup(
             KeyboardButton(
                 text="🌐 Личный кабинет",
                 web_app=WebAppInfo(
-                    url="https://sad-donuts-repeat.loca.lt"
+                    url="https://deposit-bot-ggba.onrender.com"
                 )
             )
         ]
