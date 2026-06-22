@@ -108,3 +108,46 @@ body {
 
     font-weight: 700;
 }
+
+
+.summary {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.summary-card {
+    flex: 1;
+    padding: 12px;
+    border-radius: 12px;
+    color: white;
+}
+
+.summary-card .value {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.green { background: #22c55e; }
+.blue { background: #3b82f6; }
+.purple { background: #a855f7; }
+
+.portfolio {
+    margin-top: 20px;
+}
+
+.portfolio-item {
+    margin-bottom: 10px;
+}
+
+.bar {
+    background: #eee;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.fill {
+    height: 100%;
+    background: #3b82f6;
+}

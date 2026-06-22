@@ -64,6 +64,48 @@ fetch(`/api/summary/${TELEGRAM_ID}`)
             + " ₽";
     });
 
+
+document.getElementById("depositsCount").innerText = data.count;
+
+fetch(`/api/deposits/${TELEGRAM_ID}`)
+    .then(r => r.json())
+    .then(data => {
+
+        const portfolio = {};
+
+        data.forEach(dep => {
+            portfolio[dep.bank] =
+                (portfolio[dep.bank] || 0) + Number(dep.amount);
+        });
+
+        const total = Object.values(portfolio).reduce((a, b) => a + b, 0);
+
+        const container =
+            document.getElementById("portfolio");
+
+        container.innerHTML = "";
+
+        Object.entries(portfolio).forEach(([bank, amount]) => {
+
+            const percent = Math.round((amount / total) * 100);
+
+            const div = document.createElement("div");
+
+            div.className = "portfolio-item";
+
+            div.innerHTML = `
+                <div class="bank">${bank}</div>
+                <div class="bar">
+                    <div class="fill" style="width:${percent}%"></div>
+                </div>
+                <div class="percent">${percent}%</div>
+            `;
+
+            container.appendChild(div);
+        });
+    });
+
+
 fetch(`/api/deposits/${TELEGRAM_ID}`)
     .then(r => r.json())
     .then(data => {
