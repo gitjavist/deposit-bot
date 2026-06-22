@@ -70,12 +70,43 @@ document.getElementById("depositsCount").innerText = data.count;
 fetch(`/api/deposits/${TELEGRAM_ID}`)
     .then(r => r.json())
     .then(data => {
-
         const portfolio = {};
+        const banks = {};
 
         data.forEach(dep => {
-            portfolio[dep.bank] =
-                (portfolio[dep.bank] || 0) + Number(dep.amount);
+            portfolio[dep.bank] = (portfolio[dep.bank] || 0) + Number(dep.amount);
+            banks[dep.bank] = (banks[dep.bank] || 0) + Number(dep.amount);
+        });
+
+        const ctx = document
+            .getElementById("portfolioChart")
+            .getContext("2d");
+
+        new Chart(ctx, {
+            type: "doughnut",
+
+            data: {
+
+                labels: Object.keys(banks),
+
+                datasets: [{
+
+                    data: Object.values(banks)
+
+                }]
+            },
+
+            options: {
+
+                responsive: true,
+
+                plugins: {
+
+                    legend: {
+                        position: "bottom"
+                    }
+                }
+            }
         });
 
         const total = Object.values(portfolio).reduce((a, b) => a + b, 0);

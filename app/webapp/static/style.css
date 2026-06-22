@@ -151,3 +151,15 @@ body {
     height: 100%;
     background: #3b82f6;
 }
+
+.chart-card {
+    background: white;
+    padding: 16px;
+    border-radius: 16px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+.chart-card h3 {
+    margin-top: 0;
+}
