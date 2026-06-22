@@ -4,22 +4,12 @@ const tg = window.Telegram.WebApp;
 
 tg.expand();
 
-let TELEGRAM_ID = null;
-
-if (tg.initDataUnsafe?.user?.id) {
-    TELEGRAM_ID = tg.initDataUnsafe.user.id;
-}
-
-const tg = window.Telegram.WebApp;
-
-tg.expand();
-
 let TELEGRAM_ID =
     tg.initDataUnsafe?.user?.id;
 
 if (!TELEGRAM_ID) {
 
-    TELEGRAM_ID = 123456789; // твой ID
+    TELEGRAM_ID = 123456789;
 
     console.log(
         "DEV MODE",
