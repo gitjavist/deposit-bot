@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мои вклады</title>
+
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="topbar">
+
+    <div class="title">
+        💰 Вклады
+    </div>
+
+</div>
+
+<div class="header">
+
+    <h1>💰 Мои вклады</h1>
+
+    <div class="summary">
+
+        <div class="summary-card">
+            <div>Общая сумма</div>
+            <div id="totalAmount">0 ₽</div>
+        </div>
+
+        <div class="summary-card">
+            <div>Доход в год</div>
+            <div id="totalIncome">0 ₽</div>
+        </div>
+
+    </div>
+
+</div>
+
+<button id="showFormBtn">
+    ➕ Добавить вклад
+</button>
+
+<div id="depositForm" style="display:none;">
+
+    <input
+        id="bank"
+        placeholder="Банк">
+
+    <input
+        id="depositName"
+        placeholder="Название вклада">
+
+    <input
+        id="amount"
+        placeholder="Сумма">
+
+    <input
+        id="rate"
+        placeholder="Ставка">
+
+    <input
+        id="months"
+        placeholder="Срок (мес.)">
+
+    <label>
+        <input
+            type="checkbox"
+            id="capitalization">
+        Капитализация
+    </label>
+
+    <button id="saveDepositBtn">
+        Сохранить
+    </button>
+
+</div>
+
+<div id="deposits"></div>
+
+<script src="/static/app.js"></script>
+
+</body>
+</html>

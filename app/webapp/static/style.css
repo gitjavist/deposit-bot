@@ -1,0 +1,110 @@
+.header {
+    margin-bottom: 25px;
+}
+
+.summary {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.summary-card {
+    flex: 1;
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,.1);
+}
+
+.summary-card div:last-child {
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 8px;
+}
+
+.card {
+    transition: .2s;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+}
+
+#showFormBtn,
+#saveDepositBtn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+
+#depositForm {
+    background: white;
+    padding: 15px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+#depositForm input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.actions {
+    margin-top: 12px;
+    display: flex;
+    gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+
+    border: none;
+
+    padding: 8px 12px;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+}
+
+:root {
+
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --card-color: #ffffff;
+}
+
+body {
+
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.topbar {
+
+    position: sticky;
+
+    top: 0;
+
+    background: white;
+
+    padding: 15px;
+
+    margin-bottom: 20px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,.08);
+}
+
+.title {
+
+    font-size: 22px;
+
+    font-weight: 700;
+}
