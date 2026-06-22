@@ -2,11 +2,12 @@ let editingDepositId = null;
 
 const tg = window.Telegram.WebApp;
 
-alert(
-    JSON.stringify(
-        Telegram.WebApp.initDataUnsafe
-    )
-);
+alert(JSON.stringify({
+    initData: tg.initData,
+    initDataUnsafe: tg.initDataUnsafe,
+    version: tg.version,
+    platform: tg.platform
+}, null, 2));
 
 tg.expand();
 
@@ -286,13 +287,3 @@ async function deleteDeposit(id) {
         location.reload();
     }
 }
-
-
-const tg = window.Telegram.WebApp;
-
-alert(JSON.stringify({
-    initData: tg.initData,
-    initDataUnsafe: tg.initDataUnsafe,
-    version: tg.version,
-    platform: tg.platform
-}, null, 2));
