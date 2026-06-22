@@ -9,6 +9,10 @@ alert(JSON.stringify({
     platform: tg.platform
 }, null, 2));
 
+alert(
+    tg.initData.length
+);
+
 tg.expand();
 
 let TELEGRAM_ID =
