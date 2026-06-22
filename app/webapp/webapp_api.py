@@ -12,7 +12,24 @@ from fastapi.responses import FileResponse
 
 from pydantic import BaseModel
 
-app = FastAPI()
+from contextlib import asynccontextmanager
+
+from app.database.database import engine
+from app.database.database import Base
+
+@asynccontextmanager
+async def lifespan(app):
+
+    async with engine.begin() as conn:
+        await conn.run_sync(
+            Base.metadata.create_all
+        )
+
+    yield
+
+app = FastAPI(
+    lifespan=lifespan
+)
 
 app.mount(
     "/static",
