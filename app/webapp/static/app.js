@@ -2,6 +2,12 @@ let editingDepositId = null;
 
 const tg = window.Telegram.WebApp;
 
+alert(
+    JSON.stringify(
+        Telegram.WebApp.initDataUnsafe
+    )
+);
+
 tg.expand();
 
 let TELEGRAM_ID =
